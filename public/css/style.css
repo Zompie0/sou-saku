@@ -1,0 +1,223 @@
+
+/* 基本的なbody背景や文字色は必要に応じて追加 */
+
+body {
+  font-family: system-ui, sans-serif;
+  background:#f4f4f4;
+  margin:0;
+  padding:2rem;
+}
+
+
+/* ボタン修正 */
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+  text-align: left;
+}
+
+/*横並び化*/
+#display{
+  display: flex;
+  align-items: flex-start;
+}
+
+
+
+/*エリアサイズ*/
+button.main{
+  width: 135px;
+  height: 190px;
+  border-radius: 15px;
+  display: flex;
+  transition: background 150ms ease;
+}
+/*タイトル縦並び化*/
+.title{
+  display: block;
+}
+/*表紙*/
+.title img{
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #ddd;
+  border: 1px solid #aaa;
+}
+/*タイトル*/
+.title strong{
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*作者名*/
+.title a{
+  display: block;
+  font-size: 0.7em;
+  width: 100px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+
+/*左エリア*/
+.line {
+  display:inline-block;
+}
+/*作品タイプ*/
+.line div{
+  writing-mode: vertical-rl;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #ffffff;
+  text-align: center;
+  justify-content: center;
+
+  padding: 0.25em 0.1em;
+  background-color: #0044ff;
+  height: 45px;
+  width: 15px;
+  border-radius: 15px;
+}
+/*オプション*/
+.line a{
+  writing-mode: vertical-rl;
+  letter-spacing: -0.5em;
+  height: 45px;
+  text-decoration: none;
+    color: #4d4d4d;
+}
+
+select{
+  padding: initial;
+  writing-mode: vertical-rl;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #ffffff;
+  text-align: center;
+  background-color: #0044ff;
+  border: none;
+  border-radius: 15px;
+}
+
+/*カーソル色変え処理*/
+button.main:hover,
+button.main:focus-within {
+    background: #e5e7eb;
+}
+
+/*新規作成*/
+button.main_create{
+  width: 135px;
+  height: 190px;
+  border-radius: 15px;
+  display: flex;
+}
+.title_create img{
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: transparent;  /* 背景は透明 */
+  top: 5px;     /* 内側にずらす */
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+
+  border: 2px dashed #a5a5a5; /* ← 点線ボーダー */
+  pointer-events: none;
+  border-radius: 8px;       /* 必要なら */
+}
+.title_create strong{
+  width: 100px;
+  white-space: nowrap;
+  color: #6d6d6d;
+  font-size: 120%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.line_create {
+  display:inline-block;
+}
+.line_create div{
+  writing-mode: vertical-rl;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #ffffff;
+  text-align: center;
+  justify-content: center;
+
+  padding: 0.25em 0.1em;
+  background-color: #a5a5a5;
+  height: 45px;
+  width: 15px;
+  border-radius: 15px;
+}
+
+#create{
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+/*カーソル色変え処理*/
+#create:hover,
+#create:focus-within {
+  opacity: 1;
+}
+
+
+
+  /* --- ポップアップ背景 --- */
+  #popupBg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none; /* 初期は非表示 */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* --- ポップアップ本体 --- */
+  #popup {
+    background: #f0f0f0;
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 500px;
+    text-align: left;
+  }
+
+  #popup p{
+    display: inline;
+    background-color: #0044ff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #f0f0f0;
+    font-weight: bold;
+  }
+
+  #popup button {
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+  }
+
+  #closePopup {
+    padding: 0 5px;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  #popup input {
+    outline: none;
+    width: 100px;
+    background-color: #c9c9c9;
+    color: black;
+    border: none;
+  }
+
