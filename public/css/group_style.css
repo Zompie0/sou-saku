@@ -1,0 +1,171 @@
+body {
+  font-family: sans-serif;
+  background: #cfd3db;
+  padding: 10px;
+}
+
+.side {
+  width:15%;
+  height:52vw;
+  display: block;
+  
+} 
+
+#sideUP{
+  width:100%;
+  aspect-ratio: 1;
+  text-align: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+#sideDOWN{
+  width:100%;
+  height:100%;
+  margin-top: 1rem;
+  text-align: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+#buttons{
+  display: block;
+  text-align: left;
+}
+
+#buttons button{
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 15px;
+
+  width:30%;
+  aspect-ratio: 1;
+  color: white;
+  background-color: #0044ff;
+  transition: background 150ms ease;
+}
+
+#buttons button:hover {
+  background: #00299b;
+}
+
+#buttons button.Delete{
+  background-color: #a12828;
+  transition: background 150ms ease;
+}
+#buttons button.Delete:hover {
+  background: #700909;
+}
+
+.Icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;        /* 必要に応じて調整 */
+  height: 100%;       /* 必要に応じて調整 */
+  fill: white;
+  stroke: white;
+  scale: 60%;
+  margin: 0 auto;
+}
+
+/*エリアサイズ*/
+.main{
+  width: 135px;
+  height: 190px;
+  scale: 90%;
+
+  display: flex;
+
+  position: relative;   /* 左からの位置を指定可能にする */
+  left: 50%;            /* 左端から50%右へ移動 */
+  top: 7%;
+  transform: translateX(-59%); /* 自身の幅の半分だけ戻して中央揃え */
+}
+/*タイトル縦並び化*/
+.title{
+  display: block;
+  text-align: left;
+}
+/*表紙*/
+#coverImg{
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #ddd;
+  border: 1px solid #aaa;
+}
+/*タイトル*/
+.title strong{
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*作者名*/
+.title a{
+  display: block;
+  font-size: 0.7em;
+  width: 100px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+
+/*左エリア*/
+.line {
+  display:inline-block;
+
+}
+/*作品タイプ*/
+.line div {
+  writing-mode: vertical-rl;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #ffffff;
+  text-align: center;
+
+  padding: 0.25em 0.1em;
+  background-color: #0044ff;
+  height: 45px;
+  width: 15px;
+  border-radius: 15px;
+}
+
+
+
+.content {
+  background-color:#f0f0f0;
+  width:85%;
+  height:52vw;;
+  margin-left: 10px;
+  text-align:left;
+}
+
+article {
+  display:flex;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+#episodeList div {
+  background: #fff;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#episodeList a {
+  margin-right: 8px;
+}

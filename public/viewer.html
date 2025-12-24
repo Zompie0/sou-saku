@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Viewer</title>
+<link rel="stylesheet" href="./css/viewer.css">
+
+</head>
+<body>
+  <!-- 話選択表示領域（ viewer.html の上部に置く） -->
+<div id="episodeSelector" class="episode-selector" aria-label="話選択"></div>
+<button id="episodeSelectBtn" class="episode-select-btn">話選択</button>
+
+<button id="homeBtn">ホーム</button>
+
+<div id="episodeList" class="episode-list"></div>
+
+<!-- 小説 -->
+<div id="novelViewer" style="display:none;">
+  <h2 id="novelTitle"></h2>
+  <div id="novelContent"></div>
+</div>
+
+
+<div id="mangaUI">
+  <div class="viewer">
+    <img id="single" style="display:none;">
+    <div id="spread" style="display:none;"></div>
+  </div>
+
+  <div id="nav">
+    <button id="navPrev">前へ</button>
+    <button id="navNext">次へ</button>
+  </div>
+  <div id="pageCounter" class="page-counter" aria-hidden="true"></div>
+</div>
+
+<script src="./js/viewer.js"></script>
+</body>
+</html>

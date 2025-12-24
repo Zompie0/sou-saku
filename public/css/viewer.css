@@ -1,0 +1,178 @@
+body {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+  }
+
+#viewer {
+  position: relative;  /* ← これが重要！ */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 画像を中心に */
+  overflow: hidden;
+}
+
+#single {
+  max-height: 95vh;
+  width: auto;
+  object-fit: contain;
+  display: none;
+  margin: 0 auto;
+}
+
+/* 見開き（横漫画） */
+#spread {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px; /* 2ページの隙間 */
+  width: 100%;
+  height: 100%;
+}
+
+#spread img {
+  max-height: 95vh;  /* 画面高に合わせる */
+  min-height: 95vh;  /* 画面高に合わせる */
+  width: auto;       /* 横幅自動 */
+  object-fit: contain;
+  background: #000;
+}
+
+/* ▼ ボタン共通 */
+#navPrev,
+#navNext {
+  position: fixed;
+  z-index: 999;
+  background: rgba(0,0,0,0);
+  border: 1px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+/*カーソル色変え処理*/
+#navPrev:hover,
+#navPrev:focus-within {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#navNext:hover,
+#navNext:focus-within {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* ▼ 横漫画（左右に配置） */
+body:not(.vertical) #navPrev {
+  color: white;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body:not(.vertical) #navNext {
+  color: white;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ▼ 縦漫画（上下に配置） */
+body.vertical #navPrev {
+  color: white;
+  left: 3%;
+  top: 45%;
+  transform: translateX(-50%);
+}
+body.vertical #navNext {
+  color: white;
+  left: 3%;
+  top: 52.5%;
+  transform: translateX(-50%);
+}
+
+/* ▼ ページ数表示（左下固定） */
+.page-counter {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 1000;
+  pointer-events: none; /* カウンターがクリックを邪魔しない */
+}
+
+/* ボタン */
+.episode-select-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+/* リスト */
+.episode-list {
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  z-index: 1000;
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  border-radius: 8px;
+  display: none;
+  max-height: 60vh;
+  overflow-y: auto;
+  width: 200px;
+}
+
+.episode-item {
+  padding: 6px 4px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.episode-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.active-episode {
+  background: rgba(255,255,255,0.25);
+}
+
+#homeBtn {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  z-index: 1000;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+
+  transition: background 150ms ease;
+}
+
+#homeBtn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.novel-content {
+  white-space: pre-wrap;   /* 改行保持 */
+  font-size: 16px;
+  line-height: 1.9;
+  max-width: 720px;
+  margin: 0 auto;
+}
