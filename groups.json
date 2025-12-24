@@ -1,0 +1,48 @@
+{
+  "ストラジア編": {
+    "name": "ストラジア編",
+    "orientation": "横漫画",
+    "episodes": {
+      "1": {
+        "id": 1,
+        "title": "第三話　五皇、襲来",
+        "pages": [
+          "/uploads/ストラジア編/1/1765399902731.png",
+          "/uploads/ストラジア編/1/1765399902778.png",
+          "/uploads/ストラジア編/1/1765399902811.png",
+          "/uploads/ストラジア編/1/1766490287092.png",
+          "/uploads/ストラジア編/1/1766490287094.png"
+        ]
+      },
+      "2": {
+        "id": 2,
+        "title": "第2話",
+        "pages": [
+          "/uploads/ストラジア編/2/1765399945057.png",
+          "/uploads/ストラジア編/2/1765399945065.png",
+          "/uploads/ストラジア編/2/1765399945070.png"
+        ]
+      },
+      "3": {
+        "id": 3,
+        "title": "第3話",
+        "pages": []
+      }
+    },
+    "nextEpisodeId": 1,
+    "cover": "/uploads/ストラジア編/cover/cover.png"
+  },
+  "小説テスト": {
+    "name": "小説テスト",
+    "orientation": "小説",
+    "episodes": {
+      "1": {
+        "id": 1,
+        "title": "第1話",
+        "pages": []
+      }
+    },
+    "nextEpisodeId": 1,
+    "cover": null
+  }
+}
