@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Popup Input Demo</title>
+<style>
+  body {
+    font-family: sans-serif;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  /* ボタン */
+  #openPopup {
+    padding: 12px 20px;
+    background: #4a90e2;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+  }
+
+  /* --- ポップアップ背景 --- */
+  #popupBg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none; /* 初期は非表示 */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* --- ポップアップ本体 --- */
+  #popup {
+    background: #333;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+  }
+
+  #popup input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+  }
+
+  #popup button {
+    margin-top: 15px;
+    padding: 10px 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+  }
+
+  #closePopup {
+    background: #999;
+    margin-right: 8px;
+  }
+  #submitPopup {
+    background: #4a90e2;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<h2>ポップアップ入力デモ</h2>
+<button id="openPopup">入力ポップアップを開く</button>
+
+<!-- ポップアップ背景 -->
+<div id="popupBg">
+  <!-- ポップアップ本体 -->
+  <div id="popup">
+    <h3>名前を入力してください</h3>
+    <input id="popupInput" type="text" placeholder="例: 太郎">
+    <br>
+    <button id="closePopup">キャンセル</button>
+    <button id="submitPopup">決定</button>
+  </div>
+</div>
+
+<script>
+  const openPopup = document.getElementById("openPopup");
+  const popupBg = document.getElementById("popupBg");
+  const closePopup = document.getElementById("closePopup");
+  const submitPopup = document.getElementById("submitPopup");
+  const popupInput = document.getElementById("popupInput");
+
+  // ポップアップを開く
+  openPopup.addEventListener("click", () => {
+    popupBg.style.display = "flex";
+    popupInput.focus();
+  });
+
+  // キャンセル
+  closePopup.addEventListener("click", () => {
+    popupBg.style.display = "none";
+  });
+
+  // 決定
+  submitPopup.addEventListener("click", () => {
+    const value = popupInput.value.trim();
+    if (value === "") {
+      alert("入力してください");
+      return;
+    }
+    alert("入力された内容: " + value);
+    popupBg.style.display = "none";
+    popupInput.value = "";
+  });
+
+  // 背景クリックで閉じる
+  popupBg.addEventListener("click", (e) => {
+    if (e.target === popupBg) {
+      popupBg.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>

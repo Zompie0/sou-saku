@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>漫画グループ作成（公開版）</title>
+  <!-- CSSを外部ファイルに分離 -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <h1>創作サイト ほぼ完全版</h1>
+
+  <!-- グループ一覧を表示するコンテナ -->
+  <div id="display"></div>
+
+  <!-- ポップアップ背景 -->
+  <div id="popupBg">
+
+    <!-- ポップアップ本体 -->
+    <div id="popup" class="input-row">
+        <p>作品投稿</p>
+        <button id="closePopup">✕</button><br>
+
+        <button class="main">
+          <div class="line">
+            <select id="orientation">
+              <option value="横漫画">横漫画</option>
+              <option value="縦漫画">縦漫画</option>
+              <option value="小説">小説</option>
+            </select>
+          </div>
+
+          <div class="title">
+            <img src=""><br>
+            <input id="groupName" type="text" placeholder="タイトル">
+            <a>作者</a>
+          </div>
+        </button><br>
+        
+        <button id="createGroup">作成</button>
+    </div>
+  </div>
+
+  <!-- JSを外部ファイルに分離 -->
+  <script src="./js/script.js"></script>
+</body>
+</html>

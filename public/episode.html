@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Episode Upload</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/episode.css">
+</head>
+<body>
+
+<div id="novelUI" style="display:none;">
+    <textarea id="novelText" style="width:100%;height:60vh;font-size:16px;"></textarea>
+    <br>
+    <button id="saveNovel">保存</button>
+</div>
+
+<div id="mangaUI">
+    <h2>画像アップロード（複数対応）</h2>
+
+    <!-- ドロップゾーン -->
+    <div id="dropZone">ここに画像をドロップ / クリックで選択</div>
+
+    <!-- 選択 input -->
+    <input id="fileInput" type="file" accept="image/*" multiple hidden />
+
+    <!-- プレビュー表示領域 -->
+    <div id="previewArea"></div>
+
+    <!-- アップロードボタン -->
+    <button id="uploadBtn">サーバーへアップロード</button>
+
+    <h3>アップロード済み画像</h3>
+    <div id="pages" class="preview-container"></div>
+</div>
+
+<button id="homeBtn">🏠 ホーム</button>
+<!-- JS -->
+<script src="./js/upload.js"></script>
+</body>
+</html>
